@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Sidebar Dashboard Template</title>
+  <link rel="stylesheet" href="hardware1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>Edit Hardware details of : 390606000211 </h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Hardware ID </th>
+            <th contenteditable="true">390606000211 </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Max Current(A)</td>
+            <td contenteditable="true">16</td>
+          </tr>
+          <tr>
+            <td>Gun Count</td>
+            <td contenteditable="true"> 1</td>
+          <tr>
+            <td>Connectivity</td>
+            <td contenteditable="true">2</td>
+          </tr>
+          <tr>
+            <td>Charger Model</td>
+            <td contenteditable="true">AW1110</td>
+          </tr>
+          <tr>
+            <td>Max Power(Wh)</td>
+            <td contenteditable="true">3500</td>
+          </tr>
+          <tr>
+            <td>Charger Tag</td>
+            <td contenteditable="true">OUTDID35-01</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <button href="#" onclick="hide('popup')">Close</button>
+    </div>
+  </div>
+  
+  <input type="checkbox" id="check">
+  <!--header area start-->
+  <header>
+    <label for="check">
+      <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <div class="left_area">
+      <h3>AMPOSYS</h3>
+    </div>
+    <div class="right_area">
+      <a href="#" class="logout_btn">Logout</a>
+    </div>
+  </header>
+  
+  <!--header area end-->
+  <!--mobile navigation bar start-->
+ 
+  <!--mobile navigation bar end-->
+  <!--sidebar start-->
+  <div class="sidebar" id="sidebar">
+    <div class="profile_info">
+      <img src="IMG_1852.jpg" class="profile_image" alt="">
+      <h4>Aniket Patel</h4>
+    </div>
+    <a href="#"><i class="fas fa-home"></i><span>Home</span></a>
+    <a href="#"><i class="fas fa-users"></i><span>Users</span></a>
+    <a href="#"><i class="fas fa-cogs"></i><span>Settings</span></a>
+    <div class="dropdown">
+      <button class="dropbtn">Account Management 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#"> Hardware Management</a>
+        <a href="#">Pricing Management</a>
+        <a href="#">Occupant Management</a>
+      </div>
+    </div>
+  </div>
+  <!--sidebar end-->
+  <hr>
+  <div class="content" id="content">
+    <div class="header">
+
+      <h1 class="logo"><img src="amposyslogoreal.png" alt="logo" width="80px" height="40px"></h1>
+
+      <div>
+        <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',  Times-new-roman" class="hardwareHeading2">HARDWARE MANAGEMENT</h1>
+
+        <h1 class="hardwareHeading">Manage EV Chargers, assign rates and set charger's private/public mode.</h1>
+      </div>
+      
+     
+      
+    </div>
+    
+    <span><div class="search_bar">
+      <span><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search...">
+      <button><i class="fas fa-search"></i></button></span>
+    </div></span>
+    <span><label for="entries">show only </label>
+      <select id="entries" onchange="showEntries()"><option value="100">100</option>
+      <option value="50">50</option>
+      <option value="25">25</option>
+      <option value="5">5</option>
+      </select>
+    </span>
+    
+    <button class="addButton" id="add-station-btn">ADD STATION</button>
+    
+    <div class="popup" id="popup">
+      <p>Enter the station details using the database used on the website!</p>
+      <a href="#" onclick="hide('popup')">Close</a>
+    </div>
+       
+    <hr>
+    <table id="stations-table">
+      <thead>
+        <tr>
+          <th>Station ID</th>
+          <th>Hardware</th>
+          <th>Mode</th>
+          <th>Pricing</th>
+          <th>Operations</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    
+    <div class="popup" id="add-station-form" style="display: none;">
+      <h2>ADD STATION</h2>
+      <form id="station-form">
+        <table>
+          <thead>
+          <tr><td>
+              <label for="station-id">Hardware ID</label>
+            </td>
+            <td>
+              <input type="text" id="station-id" name="station-id" value=>
+            </td>
+          </tr>
+          </thead>
+          <tr>
+            <td>
+              <label for="max-current">Max Current(A)</label>
+            </td>
+            <td>
+              <input type="text" id="max-current" name="max-current" value=>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="gun-count">Gun Count</label>
+            </td>
+            <td>
+              <input type="text" id="gun-count" name="gun-count" value=>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="connectivity">Connectivity</label>
+            </td>
+            <td>
+              <input type="text" id="connectivity" name="connectivity" value=>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="charger-model">Charger Model</label>
+            </td>
+            <td>
+              <input type="text" id="charger-model" name="charger-model" value=>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="current-phase">Current Phase</label>
+            </td>
+            <td>
+              <input type="text" id="current-phase" name="current-phase" value=>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="max-power">Max Power(Wh)</label>
+            </td>
+            <td>
+              <input type="text" id="max-power" name="max-power" value="7200">
+            </td>
+          </tr>
+        </table>
+        <button type="submit">Submit</button>
+        <button type="button" placeholder="Search..." id="cancel-btn">Cancel</button>
+      </form>
+    </div>
+  <script src="hardware.js"></script>
+</body>
+</html>
+
