@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hardware1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <input type="checkbox" id="check">
+    <header>
+        <label for="check">
+          <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+          <h3>AMPOSYS</h3>
+        </div>
+        <div class="right_area">
+          <a href="#" class="logout_btn">Logout</a>
+        </div>
+      </header>
+      
+      <!--header area end-->
+      <!--mobile navigation bar start-->
+      <div class="content" id="content">
+        <div class="header"><h1 class="hardwareHeading2">CHARGER SNAPSHOT</h1></div>
+    </div>
+      <!--mobile navigation bar end-->
+      <!--sidebar start-->
+      <div class="sidebar" id="sidebar">
+        <div class="profile_info">
+          <img src="IMG_1852.jpg" class="profile_image" alt="">
+          <h4>Aniket Patel</h4>
+        </div>
+        <a href="#"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="#"><i class="fas fa-users"></i><span>Users</span></a>
+        <a href="#"><i class="fas fa-cogs"></i><span>Settings</span></a>
+        <div class="dropdown">
+          <button class="dropbtn">Account Management 
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#" onclick="redirectTohardware()"> Hardware Management</a>
+            <a href="#">Pricing Management</a>
+            <a href="#">Occupant Management</a>
+          </div>
+        </div>
+      </div>
+      <script src="hardware.js">
+      </script>
+    </body>
+</html>
